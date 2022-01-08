@@ -9,8 +9,6 @@ import UIKit
 import WebKit
 
 class ViewController: UIViewController, WKUIDelegate {
-
-    @IBOutlet weak var reloadDisplay: UIActivityIndicatorView!
     
     var webView: WKWebView!
     
@@ -41,7 +39,7 @@ class ViewController: UIViewController, WKUIDelegate {
         
         webView.navigationDelegate = self
         webView.uiDelegate = self
-        reloadDisplay.bringSubviewToFront(view)
+        view.bringSubviewToFront(reloadDisplay)
     }
     
     @objc func backTapped() {
