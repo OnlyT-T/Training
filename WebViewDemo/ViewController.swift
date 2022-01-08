@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WKUIDelegate {
 
     @IBOutlet weak var reloadDisplay: UIActivityIndicatorView!
     
@@ -40,6 +40,7 @@ class ViewController: UIViewController {
         navigationItem.leftBarButtonItems = [back, reload, next]
         
         webView.navigationDelegate = self
+        webView.uiDelegate = self
         reloadDisplay.bringSubviewToFront(view)
     }
     
